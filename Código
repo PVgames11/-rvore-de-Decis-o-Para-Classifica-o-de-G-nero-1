@@ -1,7 +1,19 @@
+#importing our tree model from sklearn
 from sklearn import tree
+#now we will train our decision tree by providing data set let suppose we are giving the data set of height,weight and shoe size of a person and also its gender 
 X = [[181, 80, 44], [177, 70, 43], [160, 60, 38], [154, 54, 37], [166, 65, 40], [190, 90, 47], [175, 64, 39],[177, 70, 40], [159, 55, 37], [171, 75, 42], [181, 85, 43]]
+#here X be the List of lists of [Height,weight,shoe size] of 11 peoples.
 y = ['male', 'male', 'female', 'female', 'male', 'male', 'female', 'female', 'female', 'male', 'male']
+#here y is dataset of gender of above 11 peoples 
+#So till now we provided our data set to decision tree so now its time to store our decision tree classifier into a variable
+#intilizing decision tree using clf variable
 clf=tree.DecisionTreeClassifier()
+#clf stands for classifier
+#now we call the fit method on our clf variable which takes two arguments will store our X and y variable as the argument and the result will be stored in the updated clf variable
+#the fit method trains the decision tree on our data set
 clf=clf.fit(X,y)
+# now its time to predict any unlabeled data point lets suppose we have a height,weight and shoe size of a person and we want to predict its gender 
+#we create a variable which stores the result of predict()
 prediction=clf.predict([[190,70,43]])
+#print the result
 print(prediction)
